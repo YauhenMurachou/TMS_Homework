@@ -36,7 +36,7 @@ let users = [
 let usersAfterYear = users.map(item => {
 	item.age = item.age + 1;
 	return item;
-}).filter(item => item.age >= 18);
+}).filter(item => item.age >= 18)
 
 
 
