@@ -25,3 +25,13 @@ function info() {
 }
 
 info()
+
+
+function info() {
+	console.log(this.first_name, this.second_name, this.age, this.city)
+	}
+
+
+	let infoNation = info.bind(ukrainian);
+
+	infoNation()
