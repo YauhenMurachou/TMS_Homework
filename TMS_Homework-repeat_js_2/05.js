@@ -2,7 +2,11 @@
 // 	  (сколько раз ее вызызвали до этого плюс этот вызов) Используйте замыкание;
 
 
-let count = 0;
+
 function func() {
-	return count++ + 1;
+	let count = 1;
+	return function () { return count++ };
 }
+
+let funcCount = func();
+console.log(funcCount());
