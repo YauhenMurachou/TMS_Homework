@@ -18,20 +18,17 @@ let ukrainian = new User('Дмитро', 'Гордон', 52, 'Киев');
 // - Создайте функцию, которая позовляет вывести полную информацию о каждом из двух пользователей созданных в предыдущем задании.
 // 	  Функция должна выполнять вывод информации и не принимать аргументов. По сути нужно одну функцию привязать два объекта. 
 
-function info() {
-	console.log(belarusian);
-	console.log(ukrainian);
-
-}
-
-info()
-
 
 function info() {
-	console.log(this.first_name, this.second_name, this.age, this.city)
+
+	let belObject = {
+		__proto__: belarusian,
 	}
 
+	console.log(this.first_name, this.second_name, this.age, this.city)
+	console.log(belObject.first_name, belObject.second_name, belObject.age, belObject.city)
+}
 
-	let infoNation = info.bind(ukrainian);
+let infoNation = info.bind(ukrainian);
 
-	infoNation()
+infoNation()
