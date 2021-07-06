@@ -27,7 +27,7 @@ let secondHouse = new HouseBuilder(15, 4, 3);
 // 	  данный метод на каждом созданном объекте и результат записать в поле totalArea каждого объекта.
 
 HouseBuilder.prototype.calcArea = function() {
-	return this.houseWidth * this.houseHeight * this.countFloor;
+	return this.totalArea = this.houseWidth * this.houseHeight * this.countFloor;
 };
 
 firstHouse.totalArea = firstHouse.calcArea();
