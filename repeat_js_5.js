@@ -9,7 +9,7 @@ function cleanRoom(...rest) {
 	return new Promise(function (resolve, reject) {
 		resolve(rest)
 	});
-}
+};
 
 cleanRoom(3, 2, 4).then((result) => {
 
