@@ -24,22 +24,58 @@ function cleanRoom(dirtyLevel) {
 function cleanRooms(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3) {
 	cleanRoom(dirtyLevel_1).then(
 		result => {
-			console.log(`Уборка проведена успешно за ${result} секунд`),
-				err => console.error(err)
+			console.log(`Уборка комнаты №1 проведена успешно за ${result} секунд`)
 			return cleanRoom(dirtyLevel_2)
 		})
 		.then(
 			result => {
-				console.log(`Уборка проведена успешно за ${result} секунд`),
-					err => console.error(err)
+				console.log(`Уборка комнаты №2 проведена успешно за ${result} секунд`)
 				return cleanRoom(dirtyLevel_3)
 			})
 		.then(
-			result => console.log(`Уборка проведена успешно за ${result} секунд`),
-			err => console.error(err))
+			result => console.log(`Уборка комнаты №3 проведена успешно за ${result} секунд`))
+		.catch((err) => console.error(err));
 }
 
 cleanRooms(3, 4, 3);
+
+
+
+// - На основанни задачи из прошлого дамашнего задания сделайте так, чтобы можно было осуществить параллельную уборку трех комнат. 
+// 	  Только после того как уборка всех комнат завершена, пользователь может заявить об окончании уборки. 
+// 	  Если одна из комнат оказалась слишком грязной(условие при котором такое происхожит описано в предыдущем ДЗ), 
+// 	  то пекращаем уборку полностью. Для этого функция cleanRooms(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3) { ... } 
+// 	  должна принимать три аргумента, каждый из кторых описывает уровень загрязнения каждой комнаты. 
+
+
+
+
+
+// function cleanRoom(...rest) {
+// 	return rest.map((dirtyLevel, index) => {
+// 		return new Promise((resolve, reject) => {
+// 			if (dirtyLevel > 10) {
+// 				reject(new Error(`Cлишком грязно!`));
+// 			} else {
+// 				setTimeout(() => {
+// 					resolve(`Комната №${index + 1} убрана!`);
+// 				}, dirtyLevel * 1000);
+// 			}
+// 		}
+// 		)
+// 	}
+// 	)
+// }
+
+// let rest = cleanRoom(3, 4, 2);
+
+// Promise.all(rest)
+// 	.then(rest => {
+// 		rest.map(dirtyLevel => console.log(dirtyLevel))
+// 	}).catch(alert);
+
+
+
 
 
 
@@ -97,33 +133,3 @@ cleanRooms(3, 4, 3);
 // 		};
 // 	})
 // })
-
-
-// // - На основанни задачи из прошлого дамашнего задания сделайте так, чтобы можно было осуществить параллельную уборку трех комнат. 
-// // 	  Только после того как уборка всех комнат завершена, пользователь может заявить об окончании уборки. 
-// // 	  Если одна из комнат оказалась слишком грязной(условие при котором такое происхожит описано в предыдущем ДЗ), 
-// // 	  то пекращаем уборку полностью. Для этого функция cleanRooms(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3) { ... } 
-// // 	  должна принимать три аргумента, каждый из кторых описывает уровень загрязнения каждой комнаты. 
-
-// function cleanRoom(...rest) {
-// 	return rest.map((dirtyLevel, index) => {
-// 		return new Promise((resolve, reject) => {
-// 			if (dirtyLevel > 10) {
-// 				reject(new Error(`Cлишком грязно!`));
-// 			} else {
-// 				setTimeout(() => {
-// 					resolve(`Комната №${index + 1} убрана!`);
-// 				}, dirtyLevel * 1000);
-// 			}
-// 		}
-// 		)
-// 	}
-// 	)
-// }
-
-// let rest = cleanRoom(3, 4, 2);
-
-// Promise.all(rest)
-// 	.then(rest => {
-// 		rest.map(dirtyLevel => console.log(dirtyLevel))
-// 	}).catch(alert);
