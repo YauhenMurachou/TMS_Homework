@@ -49,6 +49,15 @@ cleanRooms(3, 4, 3);
 
 
 
+function cleanRooms(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3) {
+	let i = 1;
+
+	let args = [cleanRoom(dirtyLevel_1), cleanRoom(dirtyLevel_2), cleanRoom(dirtyLevel_3)]
+	return Promise.all(args).then(args => args.map(
+		result => console.log(`Уборка комнаты №${i++} проведена успешно за ${result} секунд`))).catch((err) => console.error(err))
+}
+
+cleanRooms(3, 4, 3);
 
 
 // function cleanRoom(...rest) {
