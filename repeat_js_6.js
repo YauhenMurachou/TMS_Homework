@@ -30,7 +30,7 @@ async function cleanRooms(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3) {
 		console.log(`Уборка третьей комнаты проведена успешно за ${thirdResult} секунд`);
 
 	} catch (err) {
-		console.error(err);
+		console.error(err); 
 	};
 }
 
